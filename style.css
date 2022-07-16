@@ -29,9 +29,7 @@ h3 {
   - Give it bold font weight
   - Give it pointer cursor
 */
-.info,
-.danger,
-.warning {
+button {
   border: 0px solid;
   background-color: transparent;
   padding: 0;
@@ -53,7 +51,7 @@ h3 {
   - Box shadow: 0px 10px 10px -4px rgba(0, 0, 0, 0.1)
   - Margin bottom of 12px
 */
-div[class*="alert"] {
+.alert {
   padding: 8px;
   background-color: white;
   border-radius: 8px;
@@ -93,11 +91,18 @@ div[class*="alert"] {
   - Background color of #d20d38 if inside div element with danger class
   - Background color of #e8ac00 if inside div element with warning class
 */
-div.alert__container::before button.danger {
+.alert.danger ::before {
+  content: "";
+  min-width: 6px;
   background-color: #d20d38;
+  border-radius: 50px;
 }
 
-
+.alert.warning ::before {
+  content: "";
+  min-width: 6px;
+  background-color: #e8ac00;
+}
 
 /* Step 11: Select elements with class of alert__details: 
   - Give it top and bottom padding of 12px
@@ -108,14 +113,13 @@ div.alert__container::before button.danger {
   padding-top: 12px;
   padding-bottom: 12px;
 }  
-  
-  
-.alert__details p { 
+   
+p { 
   font-size: 14px;
   margin-bottom: 12PX;
 }
 
-.alert__details:first-child ::first-line{
+p:first-child{
   font-size: 16px;
   font-weight: bold
 }
@@ -151,7 +155,7 @@ button.warning {
   - Margin top of 40px
   - Font style of italic
 */
-div > p {
+div.alert__details > p {
   margin-top: 40px;
   font-style: italic;
 }
